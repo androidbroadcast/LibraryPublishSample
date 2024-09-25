@@ -1,7 +1,10 @@
+import com.vanniktech.maven.publish.SonatypeHost
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
     `maven-publish`
+    alias(libs.plugins.vanniktechMavenPublish)
 }
 
 group = "dev.androidbroadcast.library"
@@ -112,4 +115,12 @@ publishing {
             }
         }
     }
+}
+
+// Подробности как публиковать
+// https://vanniktech.github.io/gradle-maven-publish-plugin/central
+mavenPublishing {
+    // Публикация в https://central.sonatype.com/
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+    signAllPublications()
 }
