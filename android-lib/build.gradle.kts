@@ -33,12 +33,13 @@ android {
     }
 
     publishing {
-        singleVariant("release") {
-            withSourcesJar() // Обязательно надо для удобства использования
-
-            // Javadoc отдельно публикуется только если нету исходников
-            // withJavadocJar()
-        }
+        // Android Gradle Plugin 8.7.0 создает release вариант для публикации самостоятельно
+//        singleVariant("release") {
+//            withSourcesJar() // Обязательно надо для удобства использования
+//
+//            // Javadoc отдельно публикуется только если нету исходников
+//            // withJavadocJar()
+//        }
     }
 }
 
